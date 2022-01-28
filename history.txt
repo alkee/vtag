@@ -1,0 +1,33 @@
+visual studio .net 6 grpc template 으로 vtagSvc 추가
+ - solution-project 를 같은 경로에
+ - docker 지원
+
+visual studio 용 .gitignore 를 /vtagSvc 에 추가
+
+unity project vtagger 추가
+ - 기본 3d core template
+
+unity 용 .gitignore 를 /vtagger 에 추가
+
+NuGetForUnity(https://github.com/GlitchEnzo/NuGetForUnity) 추가
+ - Assets/3rdParty 경로 생성해 추가
+
+nuget package 에서 어느 package 를 설치해야할지..
+
+unity-package 를 이용하는 방법
+ - https://github.com/alkee-allm/k2proto/blob/master/K2Unity/Assets/README.md
+ - https://intl.cloud.tencent.com/document/product/1055/39057
+
+혹은 native 가 없는 grpc-dotnet(https://github.com/grpc/grpc-dotnet)
+
+grpc-dotnet 을 보니 Grpc.Net.* 을 NuGet 에서 받아 사용하면 될 것이라 생각
+ - Grpc.Net.ClientFactory 설치(dependency 에 의해 나머지 설치)
+
+오류들...
+Assembly 'Assets/Packages/Microsoft.Extensions.Primitives.3.0.3/lib/netstandard2.0/Microsoft.Extensions.Primitives.dll' will not be loaded due to errors:
+Unable to resolve reference 'System.Runtime.CompilerServices.Unsafe'. Is the assembly missing or incompatible with the current platform?
+Reference validation can be disabled in the Plugin Inspector.
+
+unity 를 다시시작하니 발생하지 않는다...
+
+
