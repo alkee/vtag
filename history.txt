@@ -31,3 +31,10 @@ Reference validation can be disabled in the Plugin Inspector.
 unity 를 다시시작하니 발생하지 않는다...
 
 
+grpc 보다는 point cloud management/rendering 과 UI toolkit 을 이용한 UI 쪽에 우선 집중
+
+reference
+  * [PointPoint - alkee's private clould point testing platform](https://github.com/alkee/unitypointcloud)
+  * [Point cloud rendering with Unity](https://bootcamp.uxdesign.cc/point-cloud-rendering-with-unity-1a07345eb27a)
+  * 
+
