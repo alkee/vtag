@@ -38,3 +38,30 @@ reference
   * [Point cloud rendering with Unity](https://bootcamp.uxdesign.cc/point-cloud-rendering-with-unity-1a07345eb27a)
   * 
 
+
+요구사항정리부터 
+
+## 요구사항
+
+우선순위 순으로...
+
+ * 로컬의 데이터를 서버에 쉽게 업로드 해 중앙에서 데이터 관리
+   - 데이터 검색
+   - 데이터/label import
+   
+ * point cloud labeling
+   - 영역지정(cube, sphere, ...) => index 목록
+   - scalar field 관리 및 rendering
+   
+ * 2D image labeling
+   - dicom support (image, meta tags)
+   - labels and tags for entire image
+   - primitive region(point, circle, rectangle)
+   - polygonal area
+   - mask(segmentation) tools (livewire, magic wand...)
+   
+ * 업로드 없이 로컬의 데이터도 레이블 하고 사용할 수 있도록(local database?) 
+ * 3D volume support..
+ * platform independent ; 가능하면 native plugin 사용하지 않도록
+ 
+
