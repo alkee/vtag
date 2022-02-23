@@ -65,3 +65,13 @@ reference
  * platform independent ; 가능하면 native plugin 사용하지 않도록
  
 
+정리..
+
+## version 1
+
+grpc service 로 파일 및 annotation 관리를 database 를 통해 하도록
+  ; 파일시스템/공유폴더 방식을 그대로이용하는 경우 renaming, grouping(symbolic link), meta 정보가 불일치 하거나 잘못 사용할 수 있는 문제 방지
+cli tool 을 통해 데이터(원격 파일) 관리.
+python 에서 쉽게 파일 및 annotation 을 접근할 수 있는 package 제공
+unity 를 이용해 point cloud annotation 기능 제공
+
