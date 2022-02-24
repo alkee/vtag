@@ -75,3 +75,40 @@ cli tool 을 통해 데이터(원격 파일) 관리.
 python 에서 쉽게 파일 및 annotation 을 접근할 수 있는 package 제공
 unity 를 이용해 point cloud annotation 기능 제공
 
+동시에 실행이 필요한 project 들을 하나의 solution 에 넣을 경우(server + client) 동시실행 순서 등의 문제로 불편.
+
+grpc 테스트를 위해 https://github.com/fullstorydev/grpcui 사용하고자 go 설치
+
+```
+C:\Users\alkee>grpcui -plaintext localhost:5162
+Failed to compute set of methods to expose: server does not support the reflection API
+```
+
+protobuf reflection 을 지원하지 않아 API 목록을 별도로 얻어오지 못하는 모양. 따라서
+
+`grpcui -plaintext -proto greet.proto -import-path "C:\work\git\vtag\vsproj\vtagSvc\Protos" localhost:5162`
+
+와 같이 실행해 web interface 동작.
+
+https://stackoverflow.com/a/70547123 를 reference 삼아 테스트해보았지만, OnConfiguring 함수는 어떤 경우에도 불리지 않는다.
+
+매 호출마다 `builder.Services.AddDbContext<Database>` 함수의 option parameter, Database 의 생성자(`DbContextOptions<Database> options`)
+
+그리고 서비스의 생성자 순으로 불린다.
+
+[GrpcReflection 기능을 추가](https://martinbjorkstrom.com/posts/2020-07-08-grpc-reflection-in-net)하기위해
+
+`Grpc.AspNetCore.Server.Reflection` package 를 추가하고 `builder.Services.AddGrpcReflection()`, `app.MapGrpcReflectionService()` 추가해
+
+.proto 없이 테스트 환경 구성 https://docs.microsoft.com/en-us/aspnet/core/grpc/test-tools?view=aspnetcore-6.0
+
+EFCore 는 migration 및 관리 장치가 너무 복잡해 microservice 에는 어울리지 않는 것 같다. sqlite-net 이 간단하고 간편해 어울리는 듯 하다.
+
+
+
+
+
+
+
+
+
