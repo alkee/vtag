@@ -1,0 +1,41 @@
+syntax = "proto3";
+option csharp_namespace = "vtagSvc";
+
+package filesystem;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service FileSystem {
+  rpc Version (google.protobuf.Empty) returns (VersionRsp);
+  rpc List (ListReq) returns (ListRsp);
+}
+
+message ListReq {
+  string dir = 1;
+  optional string pattern = 2;
+}
+
+// 대량의 파일 목록 지원을 위해 streaming 을 선택해야하나?
+message ListRsp {
+  string dir = 1;
+}
+
+
+
+
+// The response message containing the greetings.
+message VersionRsp {
+  string version = 1;
+}
+
+
+
+message FileItem {
+  int64 id = 1;
+  string name = 2;
+  int64 size = 3;
+  google.protobuf.Timestamp createdUtc = 4;
+  google.protobuf.Timestamp modifiedUtc = 5;
+}
+
