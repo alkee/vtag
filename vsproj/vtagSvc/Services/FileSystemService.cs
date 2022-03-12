@@ -7,16 +7,17 @@ namespace vtagSvc.Services
         : FileSystem.FileSystemBase
     {
         private readonly ILogger<FileSystemService> _logger;
+
         public FileSystemService(ILogger<FileSystemService> logger)
         {
             _logger = logger;
         }
 
         public override Task<VersionRsp> Version(Empty request, ServerCallContext context)
-        {   
+        {
             return Task.FromResult(new VersionRsp
             {
-                Version = "1.0.0.0"
+                Version = GetType().Assembly.GetName().Version?.ToString() ?? "0.0.0.0"
             });
         }
     }

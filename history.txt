@@ -105,6 +105,14 @@ https://stackoverflow.com/a/70547123 를 reference 삼아 테스트해보았지�
 EFCore 는 migration 및 관리 장치가 너무 복잡해 microservice 에는 어울리지 않는 것 같다. sqlite-net 이 간단하고 간편해 어울리는 듯 하다.
 
 
+대부분의 데이터(컨텐츠)들이 파일정보일 것이라 생각. sqlite 를 이용한 filesystem 을 아이디어로 파일 단위의 동작을 생각했으나...
+ * https://www.codeproject.com/Articles/336112/Simple-file-system-over-SQLite
+ * https://github.com/guardianproject/libsqlfs
+ 
+dbms 를 사용하는 메리트가 크지 않는것도 같다. 파일 일부를 읽고쓰는등의 복잡한 파일시스템이 필요한것도 아니므로..
+
+일단 server-client 보다 3d 와 local file system 을 사용하는 unity project 에 집중하는게....
+
 
 
 

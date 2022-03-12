@@ -7,10 +7,15 @@
     <UserSecretsId>262d61b3-c17d-40b5-86d4-e8d78a5bc2de</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
+    <Company></Company>
+    <Authors>Alkee</Authors>
+    <Version>1.0.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ProductVersion>1.0.0.0</ProductVersion>
   </PropertyGroup>
 
   <ItemGroup>
-      <Protobuf Include="..\Protos\*.proto" GrpcServices="Server" />
+      <Protobuf Include="..\Protos\*.proto" GrpcServices="Server" Link="Protos\%(Filename)%(Extension)" />
   </ItemGroup>
 
   <ItemGroup>
